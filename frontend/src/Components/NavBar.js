@@ -10,7 +10,9 @@ const NavBar = () => {
                 <img src={Logo} alt='Logo'></img>
             </Link>
             <div className='links'>
-                <Link to='/prices'>Prices</Link>
+                <Link to='/demo'>Demo</Link>
+                <Link to='/login'>Login</Link>
+                <Link to='/playground'>Playground</Link>
             </div>
         </div>
     );

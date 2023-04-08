@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Demo = () => {
+const PlayGround = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Demo = () => {
     );
 }
 
-export default Demo;
+export default PlayGround;
