@@ -1,7 +1,7 @@
 .home {
     display: flex;
     flex-direction: column;
-    justify-content: flex-stat;
+    justify-content: flex-start;
     align-items: center;
     position: absolute;
     top: 10vh;
