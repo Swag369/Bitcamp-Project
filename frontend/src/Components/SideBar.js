@@ -5,17 +5,17 @@ import './SideBar.css';
 const SideBar = () => {
     return (
         <div className='side-bar'>
-            <Option name='name1' />
-            <Option name='name2' />
-            <Option name='name3' />
+            <Option name='Name1' />
+            <Option name='Lorem Ipsum' />
+            <Option name='Bitcamp' />
         </div>
     );
 }
 
-const Option = ( name ) => {
+const Option = ({ name }) => {
     return (
-        <div>
-            <Link to={'/demo/' + name}>name</Link>
+        <div className='option'>
+            <p className='option-title'>{name}</p>
         </div>
     )
 }

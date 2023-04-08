@@ -11,15 +11,29 @@
     justify-content: space-between;
     height: 10vh;
     width: 100vw;
-    background-color: #001d3d;
+    background-color: #8C2F39;
+    border-bottom-right-radius: 15px;
+}
+
+#right-side {
+    display: flex;
 }
 
 #logo {
     align-self: center;
+    padding-left: 15px;
 }
 
 #logo img {
-    width: 90px;
+    width: 55px;
+    filter: invert(100%);
+}
+
+#project-name {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-left: 25px;
+    color: white;
+    font-size: 25px;
 }
 
 .links {

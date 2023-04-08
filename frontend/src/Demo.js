@@ -9,7 +9,7 @@ const Demo = () => {
     return (
         <div className='demo'>
             <SideBar />
-            <h1>{loggedIn ? "Hello User" : "Demo"}</h1>
+            <h1 id='demo-title'>{loggedIn ? "Hello User" : "Demo"}</h1>
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
-import Logo from '../logo.svg';
+import Logo from '../Assets/logo.png';
 import Login from '../Assets/login.webp';
 import Logout from '../Assets/logout.png';
 import Demo from '../Assets/demo.png';
@@ -28,9 +28,12 @@ const NavBar = () => {
 
     return (
         <div className='nav-bar'>
-            <Link id='logo' to='/'>
-                <img src={Logo} alt='Logo'></img>
-            </Link>
+            <div id='right-side'>
+                <Link id='logo' to='/'>
+                    <img src={Logo} alt='Logo'></img>
+                </Link>
+                <h1 id='project-name'>Real Estate Price Predictor</h1>
+            </div>
             <div className='links'>
                 <Link className='link' to='/demo'>
                     <img src={Demo} alt='Demo'></img>
