@@ -1,3 +1,22 @@
+// Load environment variables
+import "./loadEnvironment.mjs";
+
+import { MongoClient } from "mongodb";
+
+const connectionString = "mongodb+srv://login:costar@login.k6hzu29.mongodb.net/test";
+
+const client = new MongoClient(connectionString);
+
+let conn;
+try {
+    conn = await client.connect();
+} catch(e) {
+    console.error(e);
+}
+
+const logindb = conn.db("login");
+
+
 const express = require("express");
 
 const PORT = 5000;
@@ -19,7 +38,7 @@ app.get("/api", (req, res) => {
 
 
 
-app.post('/signin', (req, res) => {
+app.post('/signin', async (req, res) => {
     // Check if the user has provided a username and password
     if (!req.body.username || !req.body.password) {
     res.send(400, {
@@ -30,7 +49,7 @@ app.post('/signin', (req, res) => {
 
     // Check if the username and password are valid
     //FIND THE USER IN THE DATABASE
-    const user = await User.findOne({
+    const user = await logindb.getCollection('logins').findOne({
         username: req.body.username
     });
 
@@ -42,7 +61,7 @@ app.post('/signin', (req, res) => {
     }
 
     // Check if the password is correct
-    if (!user.comparePassword(req.body.password)) {
+    if (!(user.password === req.body.password)) {
     res.send(401, {
         message: 'Invalid username or password'
     });

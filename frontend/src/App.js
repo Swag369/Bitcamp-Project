@@ -12,15 +12,15 @@ const App = () => {
   let location = useLocation();
 
   return (
-      <div className="App">
-        {!location.pathname.includes("/login") ? <NavBar /> : <></>}
-        <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/demo" exact element={<Demo />} />
-          <Route path="/login" exact element={<Login />} />
-          <Route path="/playground" exact element={<PlayGround />} />
-        </Routes>
-      </div>
+    <div className="App">
+      {!location.pathname.includes("/login") && !location.pathname.includes("demo") ? <NavBar /> : <></>}
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/demo" exact element={<Demo />} />
+        <Route path="/login" exact element={<Login />} />
+        <Route path="/playground" exact element={<PlayGround />} />
+      </Routes>
+    </div>
   );
 };
 
