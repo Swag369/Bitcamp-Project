@@ -2,8 +2,36 @@ import React, { useState, useEffect } from "react";
 import { useLeaflet, MapContainer, TileLayer, Marker, Popup, Polygon, GeoJSON, MultiPolygon, polygonData, onEachContry, Polyline } from "react-leaflet";
 import 'leaflet/dist/leaflet.css'
 import zip_code_data from './California_ZipCodes/cali_zip_codes.json'
+import React, { useContext } from 'react';
+import SideBar from './Components/SideBar.js';
+import './Demo.css';
+import { UserContext } from './Context/UserContext.js';
 
-import { Bounds } from "leaflet";
+const FirstWindow = () => {
+    return (
+        <div>
+            <h1>First Window</h1>
+        </div>
+    );
+}
+
+const SecondWindow = () => {
+    return (
+        <div>
+            <h1>Second Window</h1>
+        </div>
+    );
+}
+
+const ThirdWindow = () => {
+    return (
+        <div>
+            <h1>Third Window</h1>
+        </div>
+    );
+}
+
+const windows = [<FirstWindow />, <SecondWindow />, <ThirdWindow />];
 
 
 // const Demo = () => {
