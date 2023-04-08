@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {!location.pathname.includes("/login") && !location.pathname.includes("demo") ? <NavBar /> : <></>}
+      {!location.pathname.includes("/login") ? <NavBar /> : <></>}
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/demo" exact element={<Demo />} />
