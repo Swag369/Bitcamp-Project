@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import NavBar from "./Components/NavBar.js";
 import Home from "./Home.js";
-import Demo from "./Demo.js";
+import Demo from "./Visualizer.js";
 import Login from "./Login.js";
 import PlayGround from "./Playground.js";
 import "./App.css";
