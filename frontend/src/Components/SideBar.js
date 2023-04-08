@@ -15,7 +15,7 @@ const SideBar = () => {
 const Option = ( name ) => {
     return (
         <div>
-            <Link to={'/' + name}>name</Link>
+            <Link to={'/demo/' + name}>name</Link>
         </div>
     )
 }
