@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import NavBar from "./Components/NavBar.js";
 import Home from "./Home.js";
-import Demo from "./Demo.js";
+import Demo from "./Visualizer.js";
 import Login from "./Login.js";
 import PlayGround from "./Playground.js";
 import "./App.css";
@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {!location.pathname.includes("/login") ? <NavBar /> : <></>}
+      {!location.pathname.includes("/login") && !location.pathname.includes("demo") ? <NavBar /> : <></>}
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/demo" exact element={<Demo />} />

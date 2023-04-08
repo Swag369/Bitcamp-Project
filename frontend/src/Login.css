@@ -8,21 +8,10 @@
 
 /* Classes and Styling */
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0%;
-    }
-    100% {
-        opacity: 100%;
-    }
-}
-
 .window-login {
-    animation: 0.5s ease-out 0s 1 fadeIn;
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
     position: fixed;
     background-color: #F0EDE3;
     z-index: -1;

@@ -2,25 +2,18 @@ import React, { useContext, useState }  from 'react'
 import { useNavigate } from 'react-router-dom';
 import image from './Assets/login-left-modal.png';
 import { UserContext } from './Context/UserContext.js';
-import Alert from './Components/Alert.js';
-import './Login.css';
+
+import './Login.css'
 
 const Login = () => {
   const navigate = useNavigate();
   const { login } = useContext(UserContext);
   const [username, setUsername] = useState("");
   const [password, setPassWord] = useState("");
-  const [alert, setAlert] = useState(<></>);
-  const [count, setCount] = useState(0);
 
   const navigateToDemo = (event) => {
-    if (login(username, password)) {
-      navigate('/demo');
-    } else {
-      setCount(count + 1);
-      setAlert(<Alert message={'Invalid username or password (' + count + ')'}/>);
-      // setTimeout(() => setAlert(<></>), 5000);
-    }
+    navigate('/demo');
+    login(username, password);
     event.preventDefault();
   }
 
@@ -34,7 +27,6 @@ const Login = () => {
 
   return (
     <div className = "window-login">
-      {alert}
       <div className = "window-main">
         <div className = "overall-modal">
             <div className = "modal-left">
@@ -56,7 +48,7 @@ const Login = () => {
 
                 <label className = "input-label" for="username">Username</label>
                 <input className = "input-field" type="text" id="username" onChange={(e) => changeName(e)} 
-                placeholder="Enter username"/>
+                placeholder="Enter full name"/>
 
                 <label className = "input-label" for="password">Password</label>
                 <input className = "input-field" type="password" id="password" onChange={(e) => changePassword(e)}

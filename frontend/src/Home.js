@@ -7,6 +7,8 @@ import ExpressJSLogo from './Assets/expressjs.png';
 import GithubLogo from './Assets/github.png';
 import './Home.css';
 
+// React Leaflet Pytorch ExpressJS
+
 const Home = () => {
     return (
         <div className='home'>
