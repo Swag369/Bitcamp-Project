@@ -9,7 +9,9 @@ export const ContextProvider = (props) => {
     const login = (username, password) => {
         if (username === "Bitcamp" && password === "Bitcamp") {
             setIsLoggedIn(true);
+            return true;
         }
+        return false;
     }
 
     const logout = () => {
