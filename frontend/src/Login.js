@@ -1,9 +1,30 @@
-import React from 'react'
-import image from './Assets/login-left-modal.png'
+import React, { useContext, useState }  from 'react'
+import { useNavigate } from 'react-router-dom';
+import image from './Assets/login-left-modal.png';
+import { UserContext } from './Context/UserContext.js';
 
 import './Login.css'
 
 const Login = () => {
+  const navigate = useNavigate();
+  const { login } = useContext(UserContext);
+  const [username, setUsername] = useState("");
+  const [password, setPassWord] = useState("");
+
+  const navigateToDemo = (event) => {
+    navigate('/demo');
+    login(username, password);
+    event.preventDefault();
+  }
+
+  const changeName = (e) => {
+    setUsername(e.target.value);
+  }
+
+  const changePassword = (e) => {
+    setPassWord(e.target.value);
+  }
+
   return (
     <div className = "window-login">
       <div className = "window-main">
@@ -21,21 +42,19 @@ const Login = () => {
 
             </div>
             <div className = "modal-right">
-              <p className = "text2">Sign Up</p>
-              <p className = "text3">Have an account already? </p>
+              <p className = "text2">Sign In</p>
 
-              <form className = "sign-up-form">
+              <form className = "sign-up-form" onSubmit={(event) => navigateToDemo(event)}>
 
-                <label className = "input-label" for="fname">Full Name</label>
-                <input className = "input-field" type="text" id="fname" placeholder = "Enter full name"/>
-
-                <label className = "input-label" for="lname">Email</label>
-                <input className = "input-field" type="text" id="lname" placeholder = "Enter email"/>
+                <label className = "input-label" for="username">Username</label>
+                <input className = "input-field" type="text" id="username" onChange={(e) => changeName(e)} 
+                placeholder="Enter full name"/>
 
                 <label className = "input-label" for="password">Password</label>
-                <input className = "input-field" type="password" id="password" placeholder = "Enter password"/>
+                <input className = "input-field" type="password" id="password" onChange={(e) => changePassword(e)}
+                placeholder = "Enter password"/>
 
-                <input className = "input-button" type="submit" value="Create Account"/>
+                <input className = "input-button" type="submit" value="Sign In"/>
               </form>
               
           </div>
