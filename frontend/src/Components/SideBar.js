@@ -6,7 +6,7 @@ const SideBar = () => {
         <div className='side-bar'>
             <Option name='Name1' />
             <Option name='Lorem Ipsum' />
-            <Option name='Bitcamp' />
+            <Option name='Bitcamp stuff' />
         </div>
     );
 }
