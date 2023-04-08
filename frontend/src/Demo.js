@@ -1,42 +1,40 @@
 import React, { useState, useEffect } from "react";
-import { useLeaflet } from "react-leaflet";
+import { useLeaflet, MapContainer, TileLayer, Marker, Popup, useMap, GeoJSON, LayerStyle, polygonData, onEachContry } from "react-leaflet";
+import 'leaflet/dist/leaflet.css'
+
+import { Bounds } from "leaflet";
 
 const Demo = () => {
-    const [map, setMap] = useState(null);
-    const [markers, setMarkers] = useState([]);
 
-    useEffect(() => {
-        // Load the California zipcode shapefile.
-        const shapefile = 'california_zipcodes.shp';
+    const position = [37.42, -122.16];
 
-        // Create a GeoJSON object for each zipcode.
-        const df = geopandas.read_file(shapefile);
-        const geojson = df.to_json();
+    
 
-        // Add the GeoJSON objects to the map.
-        setMap(
-        leaflet.Map({
-            center: [37.7752, -122.4189],
-            zoom: 10,
-            layers: [
-            leaflet.providers.Stamen('watercolor'),
-            leaflet.GeoJSON(geojson),
-            ],
-        })
-        );
 
-        // Add a marker for each zipcode.
-        for (const zipcode of df['zipcode']) {
-        const marker = leaflet.marker([df['longitude'][zipcode], df['latitude'][zipcode]]);
-        marker.bindPopup(df['zipcode'][marker.layer_id]);
-        setMarkers([...markers, marker]);
-        }
-    }, []);
 
-    return (
-        <div>
-        <leafletMap ref={setMap} markers={markers} />
-        </div>
+	return (
+		<div style = {{height: "50vh"}}>
+
+
+
+			<MapContainer center = {position} zoom={13} style = {{height: 600, width : "70vw"}} bounds = {[[42.036346, -124.924605], [32.189861, -112.755379]]}>
+
+				<TileLayer
+					attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+				/>
+
+
+
+			</MapContainer>
+
+
+			<div>End</div>
+
+		</div>
+
+
+
     );
 };
 
