@@ -4,7 +4,7 @@ import './Demo.css';
 import { UserContext } from './Context/UserContext.js';
 
 const Demo = () => {
-    const { loggedIn, login, logout } = useContext(UserContext);
+    const { loggedIn } = useContext(UserContext);
 
     return (
         <div className='demo'>
